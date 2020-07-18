@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Conditional Demo</title>
   </head>
   <body>
-
     <script type="text/javascript">
 
-var userGuess = prompt("guess a number");
-var myWinningNumber = 42;
+      var myWinningNumber = 42;
+      var userGuess = parseInt(prompt("guess a number"))
+      if (userGuess === myWinningNumber) {
 
-if (userGuess === myWinningNumber) {
-  alert("the secret to life is" + myWinningNumber);
+        alert("the secret to life is" + " " + myWinningNumber);
 
-}
-// 42 ==='42'
+      }
+        //42 ==='42'
+/*Type coercion */
 
-else {
-  alert("loser");
-}
-      // // Here we create our prompt and confirm variables which will store user input.
-      // var confirmSushi = confirm("Do you like sushi?");
-      // var confirmGingerTea = confirm("Do you like Ginger Tea?");
-      // var sushiType = prompt("What kind of sushi do you like?");
+      else {
+        alert("Loser");
+      }
+            // // Here we create our prompt and confirm variables which will store user input.
+            // var confirmSushi = confirm("Do you like sushi?");
+            // var confirmGingerTea = confirm("Do you like Ginger Tea?");
+            // var sushiType = prompt("What kind of sushi do you like?");
 
-      // // If the user likes sushi (confirmSushi === true), we run the following block of code.
-      // if (confirmSushi) {
-      //   alert("You like " + sushiType + "!");
-      // }
-      // // If the user likes ginger tea (confirmGingerTea === true), we run the following block of code.
-      // else if (confirmGingerTea) {
-      //   alert("You like ginger tea!!");
-      // }
-      // // If neither of the previous condition were true, we run the following block of code.
-      // else {
-      //   alert("You don't like sushi or ginger tea.");
-      // }
-
+            // // If the user likes sushi (confirmSushi === true), we run the following block of code.
+            // if (confirmSushi) {
+            //   alert("You like " + sushiType + "!");
+            // }
+            // // If the user likes ginger tea (confirmGingerTea === true), we run the following block of code.
+            // else if (confirmGingerTea) {
+            //   alert("You like ginger tea!!");
+            // }
+            // // If neither of the previous condition were true, we run the following block of code.
+            // else {
+            //   alert("You don't like sushi or ginger tea.");
+            // }
     </script>
-
   </body>
 </html>
