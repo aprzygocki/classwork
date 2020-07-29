@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var faveBands = [ 'N sync', 'Backstreet Boys', 'Queen', "Destiny's Child", 'Floyd', 'Odessa']
+    .map(function(band) {
+      console.log(band);
+      return band.toLowerCase();
+    });
+  var usersChoice = prompt('What is your favorite band?').toLowerCase();
+  if (faveBands.indexOf(usersChoice) !== -1) {
+    alert(usersChoice + ' is pretty cool');
+  } else {
+    alert('They\' lame');
+  }
+</script>
+</body>
+</html>

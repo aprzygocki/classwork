@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <script>
+      /*
+       * We need a way for the computer to choose a random selection between r, p, or s
+       * store all of the available options for the computer in an array [ 'r', 'p', 's']
+       * */
+      var computerChoices = ["r", "p", "s"];
+      /*
+       * We need a way to track the number wins
+       * number of losses
+       * number of ties
+       *
+       */
+      var wins = 0;
+      var ties = 0;
+      var losses = 0;
+      for (var i = 0; i < 10; i++) {
+        // * We want to do something 10 times
+        //    prompt the user for their option. We are going to prompt them to only use r, p, or s
+        var usersChoice = prompt("Choose 'r', 'p', or 's'").toLowerCase();
+        //    check if the user chose 'r','p', or 's's
+        if (usersChoice === "r" || usersChoice === "p" || usersChoice === "s") {
+          //      generate a random number between 0 and 2
+          var rng = Math.floor(Math.random() * computerChoices.length);
+          //      use that random number to generate a choice for the computer
+          var computersChoice = computerChoices[rng];
+          //      alert the computers choice
+          alert(`Computer's choice is ${computersChoice}`);
+          // *     check all possible winning conditions, if one of them is true
+          if (
+            (usersChoice === "r" && computersChoice === "s") ||
+            (usersChoice === "s" && computersChoice === "p") ||
+            (usersChoice === "p" && computersChoice === "r")
+          ) {
+            // increase wins by 1
+            wins++;
+            // alert the win score
+            alert(`You've won ${wins} times`);
+          } else if (usersChoice === computersChoice) {
+            ties++;
+            alert(`You've tied ${ties} times`);
+          } else {
+            losses++;
+            alert(`You've lost ${losses} times`);
+          }
+        }
+      }
+      alert(`Wins: ${wins}  Losses: ${losses}  Ties: ${ties}`);
+      /*
+       *     you either win, you tie, or you loser
+       *
+       *       increase tie by 1
+       *       alert the tie score
+       *     else
+       *       increase losses by 1
+       *       alert the losses score to the user
+       * */
+    </script>
+  </body>
+</html>

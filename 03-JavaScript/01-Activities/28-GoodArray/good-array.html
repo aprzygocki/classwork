@@ -5,28 +5,34 @@
     <title>Good Array!</title>
   </head>
   <body>
-
     <!-- How easy is it to loop through numbers? -->
     <script>
-
-      // Set up an array of numbers.
-      var nums = [1, 8, 2, 3, 1, 1, 6, 6, 6];
-
-      // Loop through the array we just set up.
-      for (var i = 0; i < nums.length; i++) {
-        // If the current number is greater than 2..
-        if (nums[i] > 2) {
-          // Log "number is greater than 2".
-          console.log("number is greater than 2");
-        }
-        // Otherwise
-        else {
-          // Log "number is not greater than 2"
-          console.log("number is not greater than 2");
+      // nums.forEach(function(number, index, collection){
+      //   console.log(number);
+      //   console.log(index);
+      //   console.log(collection);
+      // });
+      // augiesForEach(array, callbackFn)
+      var nums = [1,2,3,4,5,6,7,8,9,0];
+      function augiesForEach(array, callbackFn) {
+        for (var index = 0; index < array.length; index++) {
+          callbackFn(array[index], index, array);
         }
       }
-
+      function augiesMap(array, callbackFn) {
+        var mapped = [];
+        augiesForEach(array, function(currentElement) {
+          mapped.push(callbackFn(currentElement));
+        });
+        return mapped;
+      }
+      var multiplyByTwo = function(number) {
+        return number * 2;
+      }
+      var newNums = augiesMap(nums, multiplyByTwo);
+      console.log(newNums);
+      console.log(someStringsLowerCased);
+      // augiesForEach(nums, logElementAndIndex);
     </script>
-    
   </body>
 </html>

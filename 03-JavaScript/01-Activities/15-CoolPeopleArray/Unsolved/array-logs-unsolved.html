@@ -10,16 +10,23 @@
 
     <script>
 
-    // Use this Array
-    var coolPeople = ["bruce lee", "arnold schwarzenegger", "will smith", "esther", "marie curie", "joan of arc"];
-
+  // Use this Array
+  var coolPeople = ["bruce lee", "arnold schwarzenegger", "will smith", "esther", "marie curie", "joan of arc"];
     // Then use console.log to print each of the names listed inside.
     // ...
 
+    // console.log(coolPeople[0]);
 
+    /*ES5 way */
+    coolPeople.forEach(function(character) {
+      console.log(character);
+    });
+    /* ES6 way*/
+    coolPeople.forEach(character => console.log(character));
+    
+    // console.log (coolPeople+1)
+    
     // CODE GOES HERE
-
-
     // ...
 
     </script>

@@ -7,10 +7,12 @@
   <body>
     <script type="text/javascript">
       // Loop 10 times
+
+      // Random Number Generator
       for (var i = 0; i < 10; i++) {
         // Generate a random decimal number between 0 and 1
-        var num = Math.random();
-
+        var num = Math.random() *10;
+        // var num = Math.floor() rounds number down to whole number
         // Display in console
         console.log(num);
       }

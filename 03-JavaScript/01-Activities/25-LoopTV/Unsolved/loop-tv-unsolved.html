@@ -5,31 +5,27 @@
     <title>Favorite TV Shows</title>
   </head>
   <body>
-
     <script type="text/javascript">
-
-      // ????
+      // ???? Declaring an array
       var favTVshows = [];
+      // declaring a placeholder variable for some tv show
       var tvShow;
-
-      // For Loop Elements Repeats ??? Times
+      // For Loop Elements Repeats 3 Times
       for (var i = 1; i < 4; i++) {
-
-        // ????
+        //   prompts the user their i tv show
+        // Settingthe placeholder variable equal to the users choice
         tvShow = prompt("What's your #" + i + " favorite TV show?");
-
-        // ????
+        // Add the tv show to the end of favTvShows array
         favTVshows.push(tvShow);
       }
-
-      // ????
-      for (var j = 0; j < favTVshows.length; j++) {
-
-        // ???
-        alert(favTVshows[j]);
+      // Loop through the tv shows
+      for (var i = 0; i < favTVshows.length; i++) {
+        // alert each show in the favTvShows array
+        alert(favTVshows[i]);
       }
-
     </script>
-
   </body>
 </html>
+
+
+
