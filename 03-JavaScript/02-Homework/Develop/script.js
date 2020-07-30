@@ -8,19 +8,18 @@
 
 //   passwordText.value = password;
 
-// }
+// 
 
 // // Add event listener to generate button
 
 // generateBtn.addEventListener("click", writePassword);
 const resultEl = document.getElementById('result');
 const lengthEl = document.getElementById('length');
-const uppercasetEl = document.getElementById('Uppercase');
+const uppercaseEl = document.getElementById('Uppercase');
 const lowercaseEl = document.getElementById('Lowercase');
 const numbersEl = document.getElementById('Numbers');
 const symbolsEl = document.getElementById('Symbols');
 const generateEl = document.getElementById('Generate');
-const clipboardEl = document.getElementById('AutoSelect');
 
 const randomFunc = {
 lower: getRandomLower,
@@ -30,25 +29,23 @@ symbol: getRandomSymbol,
 };
 
 // generate event listener
-generateBtn.addEventListener("click", () => {
-    const length = +lengthEl.value;
+generate.addEventListener("click", () => {
+    const length = lengthEl.value;
     const hasLower = lowercaseEl.checked;
     const hasUpper = uppercaseEl.checked;
     const hasNumber = numbersEl.checked;
     const hasSymbol = symbolsEl.checked;
-    const hasAutoSelect = clipboardEl.checked;
-    
+        
     resultEl.innerText =generatePassword (
         hasLower, 
         hasUpper, 
         hasNumber, 
         hasSymbol, 
-        hasAutoSelect,
         length,
     );
 });
 // copy password to clipboard
-clipboardEl.addEventListener('click', () => {
+generate.addEventListener('click', () => {
     const textarea = document.createElement('textarea');
     const password = resultEl.innerText;
     if (!password){
@@ -82,7 +79,7 @@ if(typesCount === 0){
 }
 for (let i = 0; i < length; i += typesCount) {
     typesArr.forEach(type => {
-        const funcName = object.keys(type)[0];
+        const funcName = Object.keys(type)[0];
         console.log('funcName:', funcName);
 
         generatedPassword += randomFunc [funcName]();

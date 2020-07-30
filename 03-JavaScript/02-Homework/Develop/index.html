@@ -20,7 +20,7 @@
         <div id="sec_options">
           <div class="chboxr">
             <div class="chboxl">Password Length:</div>
-              <select id="pgLength" title="Select the length of your password." onclick="generatePassword( false );">
+              <select id="length" title="Select the length of your password." onclick="generatePassword( false );">
               <optgroup label="Weak">				
                    <option value="6">6</option>
                    <option value="7">7</option>
@@ -165,25 +165,20 @@
           <div class="chboxl">Include Uppercase Characters:</div>
           <div class="chboxr"><label><input type="checkbox" name="Uppercase" id="Uppercase" onclick="generatePassword( false );">( e.g. ABCDEFGH )</label></div>	
           
-          <div class="chboxl">Auto-Select:</div>
-          <div class="chboxr"><label><input type="checkbox" name="AutoSelect" id="AutoSelect" onclick="generatePassword( false );">( select the password automatically )</label></div>			
-         
         </div>
         <!-- original code below this line -->
         <div class="card-body">
           <textarea
             readonly
-            id="password"
+            id="result"
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
         </div>
         <div class="card-footer">
-          <button id="Generate" class="btn">Generate Password</button>
+          <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
     </div>
-    <script src="/script.js"></script>
-    <script src="03-JavaScript\02-Homework\Develop\script.js"></script>
-  </body>
+    <script src="./script.js"></script>
 </html>
