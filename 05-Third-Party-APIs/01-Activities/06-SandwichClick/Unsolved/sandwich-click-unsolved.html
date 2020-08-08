@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trigger Clicked</title>
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Click to Eat Sandwich</h1>
+  <h3 id="pbj">Peanut Butter Jelly</h3>
+  <h3 id="grilledcheese">Grilled Cheese</h3>
+  <h3 id="roastbeef">Roast Beef</h3>
+  <div id="image-div"></div>
+  <script type="text/javascript">
+    // This document.ready isn't necessary in this example... but is needed in cases where the HTML is complex.
+    // This code makes sure that the JavaScript doesn't get run until the HTML is finished loading
+    // It's useful to become familiar with now.
+    // Use event delegation for the on click
+    $(document).ready(function() {
+      // VARIABLES
+      let pbj = 0;
+      let grilledCheese = 0;
+      let roastBeef = 0;
+      $(document).on('click', 'h3', function() {
+        // Vanilla script
+        // This has 4 rules
+        // this is determined by Javascript
+        // 'this'
+        if ($(this).attr('id') === 'pbj') {
+          pbj++;
+          $('#image-div').html('');
+          alert(`You've eaten ${pbj} pbj sandwiches`);
+          const $img = $('<img>').attr('src', 'https://images.eatthismuch.com/site_media/img/33482_tabitharwheeler_6cd5f22c-a4fa-476b-abba-c9c9a42c3c3c.jpg');
+          $('#image-div').append($img);
+          return;
+        }
+        if ($(this).attr('id') === 'roastbeef') {
+          roastBeef++;
+          $('#image-div').html('');
+          alert(`You've eaten ${roastBeef} roastbeef sandwiches`);
+          const $img = $('<img>').attr('src', 'https://i2.wp.com/www.eatthis.com/wp-content/uploads/2019/01/low-calorie-roast-beef-cheddar-sandwiches-horseradish-mayo.jpg?resize=640%2C360&ssl=1');
+          $('#image-div').append($img);
+          return;
+        }
+        if ($(this).attr('id') === 'grilledcheese') {
+          grilledCheese++;
+          $('#image-div').html('');
+          alert(`You've eaten ${grilledCheese} grilledcheese sandwiches`);
+          const $img = $('<img>').attr('src', 'https://hips.hearstapps.com/hmg-prod/images/grilled-cheese-horizontal-jpg-1522266016.jpg');
+          $('#image-div').append($img);
+          return;
+        }
+      });
+      // $('#pbj').on('click', function() {
+      //   pbj++;
+      //   $('#image-div').html('');
+      //   alert(`You've eaten ${pbj} pbj sandwiches`);
+      //   const $img = $('<img>').attr('src', 'https://images.eatthismuch.com/site_media/img/33482_tabitharwheeler_6cd5f22c-a4fa-476b-abba-c9c9a42c3c3c.jpg');
+      //   $('#image-div').append($img);
+      // });
+      // $('#grilledcheese').on('click', function() {
+      //   grilledCheese++;
+      //   $('#image-div').html('');
+      //   alert(`You've eaten ${grilledCheese} grilled cheese sandwiches`);
+      //   const $img = $('<img>').attr('src', 'https://hips.hearstapps.com/hmg-prod/images/grilled-cheese-horizontal-jpg-1522266016.jpg');
+      //   $('#image-div').append($img);
+      // });
+      // $('#roastbeef').on('click', function() {
+      //   roastBeef++;
+      //   $('#image-div').html('');
+      //   alert(`You've eaten ${grilledCheese} roast beef sandwiches`);
+      //   const $img = $('<img>').attr('src', 'https://i2.wp.com/www.eatthis.com/wp-content/uploads/2019/01/low-calorie-roast-beef-cheddar-sandwiches-horseradish-mayo.jpg?resize=640%2C360&ssl=1');
+      //   $('#image-div').append($img);
+      // });
+      // ====================================================================
+      // Here we create variables for tracking the number of sandwiches eaten
+      // ...
+      // ...
+      // FUNCTIONS
+      // ====================================================================
+      // Here we create various on "click" functions which capture the clicks
+      // Inside each click event is the code to create an alert, update the counter, then show the updated count.
+      // ...
+      // ...
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scope Activity #1</title>
+</head>
+<body>
+  <h1>Scope Activity #1</h1>
+  <h2>✨Open the console to see the magic!✨</h2>
+  <script>
+    function outside(a) {
+      // what is the scope of this variable?
+      var x = 1;
+      for (let i = 0; i < 5; i++) {
+        console.log('hi mom');
+      }
+      function anotherOne() {
+        console.log('another one');
+      }
+      // what is the scope of this function and the scope of y?
+      function inside(y) {
+        console.log(a + x + y);
+      }
+      return inside;
+    }
+    outside(1)(3);
+    var myFn = outside(1)
+    myFn(3);
+    var insideOut = outside(2);
+    insideOut(2);
+    // Uncaught ReferenceError: x is not defined.
+    // How does insideOut have access to x?
+    console.log("The value of 'x' outside 'outside()' is: " + x);
+  </script>
+</body>
+</html>
