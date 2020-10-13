@@ -1,2 +1,2 @@
 # classwork
-I will push some classwork to this repository 
+This repo starts out with Web API's
